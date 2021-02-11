@@ -156,11 +156,11 @@ body {
 }
 
 footer {
-  background-color: red;
+  background-color: #E23744;
   color: #333;
   font-size: 1rem;
   font-weight: 300;
-  height: 100px;
+  height: 30px;
   margin-top: 0;
 }
 

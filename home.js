@@ -6,7 +6,7 @@ let recipe_labels = [];
 main = document.querySelector('.main');
 interests.forEach(
     interest => {
-        getMeals(interest);
+        // getMeals(interest);
     }
 );
 
@@ -171,7 +171,8 @@ function load(entries) {
     console.warn(number_displayed >= recipe_images.length,number_displayed , recipe_images.length)
     if (number_displayed >= recipe_images.length)
     {
-        observer.unobserve( document.querySelector('footer'));
+        observer.unobserve(document.querySelector('footer'));
+        document.querySelector('footer').innerHTML = 'You have reached end';
         }
 }
 function reloadMeals(reload) {
