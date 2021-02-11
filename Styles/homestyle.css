@@ -42,7 +42,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 20px;
-  opacity: .7;
+  opacity: 1;
 }
 
 .head_carousel .head_carousel_slide h3 {
