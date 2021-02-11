@@ -15,10 +15,16 @@ sans-serif;
     box-sizing: border-box;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     background-color: $theme;
     height: 100vh;
     overflow: hidden;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 .heading {
