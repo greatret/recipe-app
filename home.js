@@ -32,8 +32,8 @@ function get_req_recipee()
 window.number_displayed = 6;
 function getMeals(interest) {
 console.log('inside');
-window.APP_ID = '70cd0649';
-    window.APP_KEY = 'fcc0f44d5609930052d0739d4c0011b0';
+window.APP_ID = '5d0f7d7f';
+    window.APP_KEY = 'f50cfc128a915e224ddbbe83fdc95e91';
     let URL = `https://api.edamam.com/search?q=${interest}&app_id=${APP_ID}&app_key=${APP_KEY}`
         try {
     
