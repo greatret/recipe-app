@@ -85,6 +85,7 @@ window.APP_ID = '70cd0649';
             //     <h2 class='error_msg'>Couldn't load results</h2>
             // `;
             //  main.innerHTML = html;
+            window.alert('failed to load');
             console.log('Couldnt load ');
         });
 
