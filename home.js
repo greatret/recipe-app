@@ -193,9 +193,9 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".menu_bar").style.bottom = "0px";
+    document.querySelector(".menu_bar").style.bottom = "-5px";
   } else {
-    document.querySelector(".menu_bar").style.bottom = "-50px";
+    document.querySelector(".menu_bar").style.bottom = "-20px";
   }
   prevScrollpos = currentScrollPos;
 }
