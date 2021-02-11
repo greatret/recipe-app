@@ -23,11 +23,7 @@ function call_kar()
     }
 setTimeout(call_kar,70000)
 
-function get_req_recipee()
-{
 
-    
-}
 
 window.number_displayed = 6;
 function getMeals(interest) {
