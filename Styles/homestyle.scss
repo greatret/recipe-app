@@ -1,0 +1,208 @@
+$lighttheme:#fff;
+$theme:#E23744;
+$head_color:#3D5894;
+$cta_color: #623DCC;
+$font: 'Poppins',
+sans-serif;
+
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    width: 100vw;
+    overflow-x: hidden !important;
+}
+
+.head_carousel {
+    width: 100%;
+    height: auto;
+    overflow: hidden !important;
+    position: relative;
+
+    .head_carousel_slide {
+        width: calc(100% - 20px);
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        // background-color: black;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 40vh;
+            object-fit: cover;
+            border-radius: 20px;
+            opacity: .7;
+        }
+
+        h3 {
+            position: absolute;
+            bottom: 50px;
+            left: 30px;
+            color: $lighttheme;
+            font-family: $font;
+            letter-spacing: 3px;
+            text-transform: capitalize !important;
+            font-weight: 600;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: -10px;
+                height: 100%;
+                width: 2px;
+                background: $theme;
+            }
+        }
+    }
+
+
+}
+
+.skewed_line_1 {
+    width: 100%;
+    height: 20px;
+    background: black;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        left: 50%;
+        width: 50%;
+        height: 1px;
+        // background-image: linear-gradient(120deg, #e5ea15, #00c4ff);
+        background-color: $theme;
+        transform: translate(-50%);
+        border-radius: 9px;
+    }
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem 10px;
+    width: 100%;
+    overflow-x: hidden !important;
+    margin: 3rem auto;
+    grid-template-rows: auto;
+    background-color: black;
+
+    .card {
+        // padding: 5px;
+        // background-color: red;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .dish_image {
+            width: 90%;
+            height: auto;
+            max-width: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+            // *****
+            animation-duration: 1.25s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-name: placeHolderShimmer;
+            animation-timing-function: linear;
+            background: #F6F6F6;
+            // background: linear-gradient(to right, rgb(87, 81, 81) 8%, rgb(114, 101, 101) 18%, rgb(44, 32, 32) 33%);
+            background: linear-gradient(to right, #000000, #1d1c1c);
+            background-size: 800px 104px;
+            min-height: 139.44px;
+            position: relative;
+
+        }
+
+        .label {
+            margin-top: 10px;
+            text-transform: capitalize;
+            font-size: 12px;
+            font-family: $font;
+            font-weight: 600;
+            color: $lighttheme;
+        }
+
+    }
+}
+
+footer {
+    background-color: black;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem 3rem 3rem 3rem;
+    margin-top: 0;
+    margin-bottom: 150px;
+}
+
+.error_msg {
+    color: $theme;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0
+    }
+
+    100% {
+        background-position: 468px 0
+    }
+}
+
+.menu_bar {
+    position: fixed;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: $theme;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+    transition: bottom 0.3s ease;
+    margin-bottom: 200px;
+
+    .search_link_container,
+    .explore_link_container {
+        width: 50%;
+        // background-color: rgba(255, 253, 253, 0.171);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fa-compass,
+    .fa-search {
+        color: $lighttheme;
+        font-size: 32px;
+    }
+}
+
+.extra_top_margin {
+    margin-top: 50px;
+}
