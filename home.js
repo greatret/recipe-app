@@ -1,4 +1,4 @@
-interests = ['samosa','vada','dosa','pizza','tacos','aloo tikki','biryani','pulav','gulab jamun']
+interests = ['samosa','vada','dosa']
 window.html = "";
 let recipe_images = [];
 //['samosa','vada','dosa','pizza','tacos','aloo tikki','biryani','pulav','gulab jamun']
