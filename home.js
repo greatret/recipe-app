@@ -6,7 +6,7 @@ let recipe_labels = [];
 main = document.querySelector('.main');
 interests.forEach(
     interest => {
-        // getMeals(interest);
+        getMeals(interest);
     }
 );
 
