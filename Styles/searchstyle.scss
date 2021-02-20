@@ -31,7 +31,7 @@ body {
 .search_box_container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: black;
     padding: 10px;
@@ -39,7 +39,20 @@ body {
 
 .fa-search {
     color: rgb(56, 55, 55);
-    font-size: 1.2rem;
+    font-size: 22px;
+}
+
+
+.search_icon {
+    border: none;
+    outline: none;
+    border-radius: 5px 0px 0px 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 9%;
+    height: 40px;
+    background: rgb(24, 23, 23);
 }
 
 .search_box::placeholder {
@@ -48,15 +61,15 @@ body {
 
 .search_box {
     width: 92%;
-    height: 30px;
+    height: 40px;
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 5px 8px;
     font-family: $font;
 
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     color: rgb(177, 169, 169);
     background: rgb(24, 23, 23);
-    border-radius: 5px;
+    border-radius: 0px 5px 5px 0px;
 }

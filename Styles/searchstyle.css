@@ -24,9 +24,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -36,7 +36,25 @@ body {
 
 .fa-search {
   color: #383737;
-  font-size: 1.2rem;
+  font-size: 22px;
+}
+
+.search_icon {
+  border: none;
+  outline: none;
+  border-radius: 5px 0px 0px 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 9%;
+  height: 40px;
+  background: #181717;
 }
 
 .search_box::-webkit-input-placeholder {
@@ -57,15 +75,15 @@ body {
 
 .search_box {
   width: 92%;
-  height: 30px;
+  height: 40px;
   border: none;
   outline: none;
-  padding: 5px;
+  padding: 5px 8px;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: #b1a9a9;
   background: #181717;
-  border-radius: 5px;
+  border-radius: 0px 5px 5px 0px;
 }
 /*# sourceMappingURL=searchstyle.css.map */
