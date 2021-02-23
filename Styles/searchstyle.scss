@@ -57,6 +57,7 @@ body {
 
 .search_box::placeholder {
     color: rgb(105, 102, 102);
+    text-indent: 10px;
 }
 
 .search_box {
@@ -66,7 +67,7 @@ body {
     outline: none;
     padding: 5px 8px;
     font-family: $font;
-
+    text-transform: capitalize;
     font-size: 20px;
     font-weight: 400;
     color: rgb(177, 169, 169);

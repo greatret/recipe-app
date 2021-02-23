@@ -59,18 +59,22 @@ body {
 
 .search_box::-webkit-input-placeholder {
   color: #696666;
+  text-indent: 10px;
 }
 
 .search_box:-ms-input-placeholder {
   color: #696666;
+  text-indent: 10px;
 }
 
 .search_box::-ms-input-placeholder {
   color: #696666;
+  text-indent: 10px;
 }
 
 .search_box::placeholder {
   color: #696666;
+  text-indent: 10px;
 }
 
 .search_box {
@@ -80,6 +84,7 @@ body {
   outline: none;
   padding: 5px 8px;
   font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
   font-size: 20px;
   font-weight: 400;
   color: #b1a9a9;
