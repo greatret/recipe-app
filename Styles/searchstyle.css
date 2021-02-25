@@ -92,6 +92,10 @@ body {
   border-radius: 0px 5px 5px 0px;
 }
 
+.result_box {
+  height: auto;
+}
+
 .result {
   border-radius: 10px;
   width: 90%;

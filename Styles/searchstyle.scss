@@ -75,6 +75,11 @@ body {
     border-radius: 0px 5px 5px 0px;
 }
 
+.result_box {
+    height: auto;
+    // background: gray;
+}
+
 .result {
     border-radius: 10px;
     width: 90%;
@@ -98,7 +103,6 @@ body {
     }
 
     .result_label {
-        // background: red;
         margin-left: 20px;
 
         .result_label_text {
@@ -111,3 +115,21 @@ body {
         }
     }
 }
+
+.result {
+    animation: resultanimation ease .4s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    animation-fill-mode: forwards;
+
+    @keyframes resultanimation {
+        0% {
+            opacity: 0;
+            transform: translate(0px, -25px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0px, 0px);
+        }
+    }
