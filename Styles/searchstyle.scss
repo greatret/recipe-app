@@ -39,32 +39,42 @@ body {
 }
 
 
-.close_icon {
-    width: 30px;
-    height: 30px;
-    background-color: pink;
-    position: absolute;
-    top: 1%;
-    right: 10px;
-}
+// .close_icon {
+//     width: 30px;
+//     height: 30px;
+//     background-color: pink;
+//     position: absolute;
+//     top: 1%;
+//     right: 10px;
+// }
 
 
-.fa-search {
+.fa-search,
+.fa-times {
     color: rgb(56, 55, 55);
     font-size: 22px;
 }
 
 
-.search_icon {
+.search_icon,
+.close_icon {
     border: none;
     outline: none;
-    border-radius: 5px 0px 0px 5px;
+
     align-items: center;
     display: flex;
     justify-content: center;
     width: 9%;
     height: 40px;
     background: rgb(24, 23, 23);
+}
+
+.search_icon {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.close_icon {
+    border-radius: 0px 5px 5px 0px;
 }
 
 .search_box::placeholder {
@@ -149,3 +159,4 @@ body {
             transform: translate(0px, 0px);
         }
     }
+}

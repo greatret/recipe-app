@@ -32,17 +32,19 @@ body {
           align-items: center;
   background: black;
   padding: 10px;
+  position: relative;
 }
 
-.fa-search {
+.fa-search,
+.fa-times {
   color: #383737;
   font-size: 22px;
 }
 
-.search_icon {
+.search_icon,
+.close_icon {
   border: none;
   outline: none;
-  border-radius: 5px 0px 0px 5px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -55,6 +57,14 @@ body {
   width: 9%;
   height: 40px;
   background: #181717;
+}
+
+.search_icon {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.close_icon {
+  border-radius: 0px 5px 5px 0px;
 }
 
 .search_box::-webkit-input-placeholder {
@@ -137,5 +147,42 @@ body {
   letter-spacing: 1px;
   color: white;
   text-transform: capitalize;
+}
+
+.result {
+  -webkit-animation: resultanimation ease .4s;
+          animation: resultanimation ease .4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes resultanimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -25px);
+            transform: translate(0px, -25px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes resultanimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, -25px);
+            transform: translate(0px, -25px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
 }
 /*# sourceMappingURL=searchstyle.css.map */
