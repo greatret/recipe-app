@@ -35,7 +35,19 @@ body {
     align-items: center;
     background: black;
     padding: 10px;
+    position: relative;
 }
+
+
+.close_icon {
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+    position: absolute;
+    top: 1%;
+    right: 10px;
+}
+
 
 .fa-search {
     color: rgb(56, 55, 55);
@@ -74,6 +86,10 @@ body {
     background: rgb(24, 23, 23);
     border-radius: 0px 5px 5px 0px;
 }
+
+
+
+
 
 .result_box {
     height: auto;
