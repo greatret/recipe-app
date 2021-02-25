@@ -7,7 +7,7 @@ function clickPress(event) {
     
     search_box = document.querySelector('.search_box');
     search_query = search_box.value;
-
+     search_box.blur();
 
      console.log(search_box.value);
      let URL = `https://api.edamam.com/search?q=${search_query}&app_id=${APP_ID}&app_key=${APP_KEY}`
