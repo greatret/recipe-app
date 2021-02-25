@@ -37,8 +37,10 @@ function clickPress(event) {
 
 
 
-
-
+function clearresults() {
+    result_box.innerHTML = "";
+    console.log('clear results');
+}
 
 
 
