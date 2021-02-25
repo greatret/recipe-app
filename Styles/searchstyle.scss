@@ -74,3 +74,40 @@ body {
     background: rgb(24, 23, 23);
     border-radius: 0px 5px 5px 0px;
 }
+
+.result {
+    border-radius: 10px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    height: 100px;
+    background: grey;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .result_image {
+        width: 80px;
+        height: 80px;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .result_label {
+        // background: red;
+        margin-left: 20px;
+
+        .result_label_text {
+            font-family: $font;
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: white;
+            text-transform: capitalize;
+        }
+    }
+}

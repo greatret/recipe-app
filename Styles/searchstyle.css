@@ -91,4 +91,47 @@ body {
   background: #181717;
   border-radius: 0px 5px 5px 0px;
 }
+
+.result {
+  border-radius: 10px;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  height: 100px;
+  background: grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.result .result_image {
+  width: 80px;
+  height: 80px;
+}
+
+.result .result_image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.result .result_label {
+  margin-left: 20px;
+}
+
+.result .result_label .result_label_text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: capitalize;
+}
 /*# sourceMappingURL=searchstyle.css.map */
