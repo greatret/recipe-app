@@ -55,6 +55,9 @@ body {
     font-size: 22px;
 }
 
+.fa-times {
+    opacity: 0;
+}
 
 .search_icon,
 .close_icon {
@@ -79,7 +82,7 @@ body {
 
 .search_box::placeholder {
     color: rgb(105, 102, 102);
-    text-indent: 10px;
+    text-indent: 2px;
 }
 
 .search_box {
@@ -87,7 +90,7 @@ body {
     height: 40px;
     border: none;
     outline: none;
-    padding: 5px 8px;
+    padding: 5px 10px;
     font-family: $font;
     text-transform: capitalize;
     font-size: 20px;

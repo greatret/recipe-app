@@ -41,6 +41,10 @@ body {
   font-size: 22px;
 }
 
+.fa-times {
+  opacity: 0;
+}
+
 .search_icon,
 .close_icon {
   border: none;
@@ -69,22 +73,22 @@ body {
 
 .search_box::-webkit-input-placeholder {
   color: #696666;
-  text-indent: 10px;
+  text-indent: 2px;
 }
 
 .search_box:-ms-input-placeholder {
   color: #696666;
-  text-indent: 10px;
+  text-indent: 2px;
 }
 
 .search_box::-ms-input-placeholder {
   color: #696666;
-  text-indent: 10px;
+  text-indent: 2px;
 }
 
 .search_box::placeholder {
   color: #696666;
-  text-indent: 10px;
+  text-indent: 2px;
 }
 
 .search_box {
@@ -92,7 +96,7 @@ body {
   height: 40px;
   border: none;
   outline: none;
-  padding: 5px 8px;
+  padding: 5px 10px;
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
   font-size: 20px;

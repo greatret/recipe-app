@@ -4,7 +4,7 @@ window.APP_KEY = '634c9548afc87526979e8a9ba61ba8f2';
 window.result_box=document.querySelector('.result_box')
 function clickPress(event) {
  if (event.keyCode == 13) {
-    
+     document.querySelector('.fa-times').style.opacity = '1';
     window.search_box = document.querySelector('.search_box');
     search_query = search_box.value;
      search_box.blur();
@@ -45,6 +45,7 @@ function clearresults() {
     result_box.innerHTML = "";
     html = '';
     document.querySelector('.search_box').value = "";
+    document.querySelector('.fa-times').style.opacity = '0';
     // window.search_box.value = '';
     console.log('clear results');
 }
