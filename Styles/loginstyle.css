@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background: #E23744;
+  width: 100vw;
+  overflow-x: hidden !important;
+}
+
+.login_box {
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.login_box h1 {
+  font-size: 30px;
+  border-bottom: 2px solid black;
+  margin-bottom: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.login_box .textbox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 18px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid black;
+}
+
+.login_box .textbox i {
+  text-align: center;
+  float: left;
+  width: 24px;
+}
+/*# sourceMappingURL=loginstyle.css.map */
