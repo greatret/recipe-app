@@ -5,7 +5,7 @@ window.result_box=document.querySelector('.result_box')
 function clickPress(event) {
  if (event.keyCode == 13) {
     
-    search_box = document.querySelector('.search_box');
+    window.search_box = document.querySelector('.search_box');
     search_query = search_box.value;
      search_box.blur();
 
@@ -16,14 +16,18 @@ function clickPress(event) {
          then(data => {
              console.log(data);
              data.hits.forEach(hit => {
-                  
-
+                 if (hit.recipe.label.length > 35) {
+                     hit.recipe.label = hit.recipe.label.slice(0, 20) + "...";
+                 };
+                roundedCalories=Math.round(hit.recipe.calories* 100) / 100
                  html += ` <div class="result">
                 <div class="result_image">
                     <img src="${hit.recipe.image}" alt="${hit.recipe.label}">
                 </div>
                 <div class="result_label">
                     <p class="result_label_text">${hit.recipe.label}</p>
+                    <p class="yield">yield:${hit.recipe.yield}</p>
+                    <p class='calories'>calories:${roundedCalories}</p>
                 </div>
 
             </div>`
@@ -39,6 +43,9 @@ function clickPress(event) {
 
 function clearresults() {
     result_box.innerHTML = "";
+    html = '';
+    document.querySelector('.search_box').value = "";
+    // window.search_box.value = '';
     console.log('clear results');
 }
 
@@ -52,4 +59,16 @@ function clearresults() {
 
 
 
+
+// **************************** moving menu bar
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".menu_bar").style.bottom = "0px";
+  } else {
+    document.querySelector(".menu_bar").style.bottom = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
