@@ -253,8 +253,8 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #E23744;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -265,6 +265,61 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   overflow: hidden !important;
+}
+
+.loader_container .bounce1,
+.loader_container .bounce2,
+.loader_container .bounce3 {
+  margin: 0px 2px;
+  width: 30px;
+  height: 30px;
+  background-color: #623DCC;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-animation: 1s bounce infinite ease-in-out;
+          animation: 1s bounce infinite ease-in-out;
+}
+
+.loader_container .bounce1 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.loader_container .bounce2 {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.loader_container .bounce3 {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 /*# sourceMappingURL=homestyle.css.map */
