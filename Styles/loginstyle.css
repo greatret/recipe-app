@@ -14,12 +14,12 @@ html {
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background: url("https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80");
+  background: url("https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   width: 100vw;
   overflow-x: hidden !important;
 }
@@ -34,15 +34,19 @@ body {
   color: #fff;
   border: 1px solid black;
   padding: 30px;
+  box-shadow: 6px 6px 18px 5px rgba(0, 0, 0, 0.31);
+  -webkit-box-shadow: 6px 6px 18px 5px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 6px 6px 18px 5px rgba(0, 0, 0, 0.31);
+  background-color: rgba(255, 255, 255, 0.055);
 }
 
 .login_box h1 {
   color: #E23744;
-  font-size: 30px;
+  font-size: 40px;
   border-bottom: 2px solid black;
   margin-bottom: 50px;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .login_box .textbox {
@@ -79,7 +83,6 @@ body {
   font-family: "Poppins", sans-serif;
   width: 80%;
   margin: 0 10px;
-  text-transform: capitalize;
 }
 
 .login_box .textbox input::-webkit-input-placeholder {
@@ -114,5 +117,6 @@ body {
   border: none;
   border-radius: 4px;
   margin: 20px 0 0 0;
+  cursor: pointer;
 }
 /*# sourceMappingURL=loginstyle.css.map */
