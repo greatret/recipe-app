@@ -18,20 +18,88 @@
     </head>
 
     <body>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+            onload="if(submitted) {window.location='http://localhost:5500/index.html';}"></iframe>
         <div class="login_box">
             <h1>Login</h1>
-            <div class="textbox">
-                <i class="fa fa-user" aria-hidden="true"></i>
+            <form
+                action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScjC5EKQIV19D1jtMFWb5-7cfyIsksukEEAVBtJFAqrx7B4cQ/formResponse"
+                method="post" target="hidden_iframe" onsubmit="return validateForm(); ">
+                <div class="textbox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
 
-                <input type="text" placeholder="Name">
-            </div>
-            <div class="textbox">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <input type="text" placeholder="Name" id="name" name='entry.1428372542' required autocomplete="off">
+                </div>
+                <div class="textbox">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
 
-                <input type="email" placeholder="Email">
-            </div>
-            <input type="button" class="btn" value="Enter">
+                    <input type="email" placeholder="Email" id="email" name="entry.1181534084" required
+                        autocomplete="off">
+                </div>
+                <input type="submit" class="btn" value="Enter">
+            </form>
+
         </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN -->
+        <script type="text/javascript">
+            function validateName() {
+                var name = document.getElementById('name').value;
+                if (name.length == 0) {
+                    alert("Name can't be blank");
+                    return false;
+
+                }
+                if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+                    alert("Please enter your correct name"); //Validation Message
+                    return false;
+                }
+                return true;
+            }
+
+
+
+            function validateEmail() {
+
+                var email = document.getElementById('email').value;
+                if (email.length == 0) {
+                    alert("Email can't be blank"); //Validation Message
+                    return false;
+
+                }
+
+                if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+                    alert("Please enter a correct email address"); //Validation Message
+                    return false;
+
+                }
+
+                return true;
+
+            }
+
+
+            function validateForm() {
+                if (!validateName() || !validateEmail()) {
+
+                    alert("Form not submitted"); //Validation Message
+                    return false;
+                } else {
+                    submitted = true;
+                    return true;
+                }
+            }
+        </script>
     </body>
 
 </html>
