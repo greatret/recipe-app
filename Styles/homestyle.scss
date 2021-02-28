@@ -109,7 +109,7 @@ body {
 
     .card {
         // padding: 5px;
-        // background-color: red;
+        // background-color: red;   
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -236,30 +236,6 @@ footer {
     text-align: center;
     overflow: hidden !important;
 
-    .bounce1,
-    .bounce2,
-    .bounce3 {
-        margin: 0px 2px;
-        width: 30px;
-        height: 30px;
-        background-color: $cta_color;
-        border-radius: 50%;
-        display: inline-block;
-        animation: .3s bounce infinite ease-in-out;
-    }
-
-    .bounce1 {
-        animation-delay: 0s;
-    }
-
-    .bounce2 {
-        animation-delay: .2s;
-    }
-
-    .bounce3 {
-        animation-delay: .4s;
-    }
-
     .spinner {
         width: 60px;
         height: 60px;
@@ -267,19 +243,6 @@ footer {
         border-top-color: $cta_color;
         border-radius: 50%;
         animation: .8s spin infinite ease-in-out;
-    }
-}
-
-@keyframes bounce {
-
-    0%,
-    80%,
-    100% {
-        transform: scale(0);
-    }
-
-    40% {
-        transform: scale(1);
     }
 }
 
