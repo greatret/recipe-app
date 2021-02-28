@@ -176,6 +176,7 @@ body {
 }
 
 .pattern_prop {
+  background: green;
   position: fixed;
   right: 0;
   bottom: -4px;
