@@ -150,7 +150,7 @@ body {
 
 footer {
     background-color: black;
-    color: #333;
+    color: black;
     font-size: 1rem;
     font-weight: 300;
     padding: 1rem 3rem 3rem 3rem;
@@ -212,7 +212,7 @@ footer {
 }
 
 .extra_top_margin {
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 
@@ -220,7 +220,7 @@ footer {
 
 // ************************************
 .loader_container {
-    position: absolute;
+    position: fixed;
     z-index: 99999999;
     top: 0;
     bottom: 0;
@@ -245,7 +245,7 @@ footer {
         background-color: $cta_color;
         border-radius: 50%;
         display: inline-block;
-        animation: 1s bounce infinite ease-in-out;
+        animation: .3s bounce infinite ease-in-out;
     }
 
     .bounce1 {
@@ -259,6 +259,15 @@ footer {
     .bounce3 {
         animation-delay: .4s;
     }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 1px solid rgb(161, 158, 158);
+        border-top-color: $cta_color;
+        border-radius: 50%;
+        animation: .8s spin infinite ease-in-out;
+    }
 }
 
 @keyframes bounce {
@@ -271,5 +280,11 @@ footer {
 
     40% {
         transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg)
     }
 }

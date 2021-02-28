@@ -1,4 +1,25 @@
-interests = ['samosa','sizzler','dosa']
+
+preference=localStorage.getItem('Preference');
+if (preference == 'veg') {
+    window.interests = ['paneer'];
+}
+else if(preference=='nonveg') {
+    window.interests= ['chicken'];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// interests = ['samosa', 'vada', 'dosa', 'pizza'];
 window.html = "";
 let recipe_images = [];
 //['samosa','vada','dosa','pizza','tacos','aloo tikki','biryani','pulav','gulab jamun']
@@ -18,10 +39,10 @@ function call_kar()
         getMeals(interests[req_no++]);
     if (req_no != interest.length)
     {
-    setTimeout(call_kar,20000)
+    setTimeout(call_kar,8000)
         }
     }
-setTimeout(call_kar,70000)
+setTimeout(call_kar,1000)
 
 
 
@@ -80,7 +101,7 @@ window.APP_ID = '5d0f7d7f';
             //     <h2 class='error_msg'>Couldn't load results</h2>
             // `;
             //  main.innerHTML = html;
-            window.alert('failed to load');
+            // window.alert('failed to load');
             console.log('Couldnt load ');
         });
 
@@ -203,3 +224,19 @@ var currentScrollPos = window.pageYOffset;
 //   } else {
 //     document.getElementById("navbar").style.top = "-50px";
 //   } 
+
+
+
+
+
+
+
+
+
+
+
+// // **************************** loader
+var loader=setTimeout(hide,6000);   //make it ten 
+function hide() {
+    document.querySelector('.loader_container').style.display = 'none';
+}
