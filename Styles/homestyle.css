@@ -270,34 +270,6 @@ footer {
   overflow: hidden !important;
 }
 
-.loader_container .bounce1,
-.loader_container .bounce2,
-.loader_container .bounce3 {
-  margin: 0px 2px;
-  width: 30px;
-  height: 30px;
-  background-color: #623DCC;
-  border-radius: 50%;
-  display: inline-block;
-  -webkit-animation: .3s bounce infinite ease-in-out;
-          animation: .3s bounce infinite ease-in-out;
-}
-
-.loader_container .bounce1 {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-.loader_container .bounce2 {
-  -webkit-animation-delay: .2s;
-          animation-delay: .2s;
-}
-
-.loader_container .bounce3 {
-  -webkit-animation-delay: .4s;
-          animation-delay: .4s;
-}
-
 .loader_container .spinner {
   width: 60px;
   height: 60px;
