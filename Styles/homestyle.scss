@@ -235,6 +235,7 @@ footer {
     align-items: center;
     text-align: center;
     overflow: hidden !important;
+    flex-direction: row;
 
     .spinner {
         width: 60px;
@@ -243,6 +244,17 @@ footer {
         border-top-color: $cta_color;
         border-radius: 50%;
         animation: .8s spin infinite ease-in-out;
+    }
+
+    .quote {
+        position: absolute;
+        bottom: 150px;
+        text-transform: capitalize;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-family: $font;
+        font-weight: 300;
     }
 }
 

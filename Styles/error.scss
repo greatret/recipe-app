@@ -1,0 +1,62 @@
+$theme:#E23744;
+$head_color:#3D5894;
+$cta_color: #623DCC;
+$font: 'Poppins',
+sans-serif;
+
+
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    background-color: $theme;
+    height: 100vh;
+    overflow: hidden;
+    max-height: 100vh;
+    min-height: -webkit-fill-available;
+    font-family: $font;
+}
+
+
+.container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #343434;
+
+    h1 {
+        font-size: 160px;
+        margin: 0;
+        font-weight: 900;
+        letter-spacing: 10px;
+        background: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center no-repeat;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    a {
+        text-decoration: none;
+        background: #3D5894;
+        color: white;
+        font-weight: 500;
+        padding: 12px 12px;
+        font-size: 14px;
+        text-transform: uppercase;
+        display: inline-block;
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+}

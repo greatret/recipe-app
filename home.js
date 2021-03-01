@@ -7,11 +7,17 @@ else if(preference=='nonveg') {
     window.interests= ['chicken'];
 }
 else {
-    window.alert('You got the wrong url');
-    document.querySelector('body').style.display = none;
+    // window.alert('You got the wrong url');
+    // document.querySelector('body').style.display = 'none';
+    window.location='error.html';
 }
-
-
+quoteList = ["If we're not meant to have midnight snacks, why is there a light in the fridge", "a party without cake is just a meeting",
+    "i just don't want to look back and think \"I could\'ve eaten that\" ", "Did you say exercise or extra fries", "You can't be sad when you're holding a cupcake",
+    "Life is short. Eat the dessert first","i'm sorry for what i said when i was hungry","peas be mine"]
+// window.alert(quoteList.length);
+quotenumber = Math.floor(Math.random() * 8);
+// window.alert(quoteList[quotenumber]);
+document.querySelector('.quote').innerHTML = quoteList[quotenumber];
 
 
 
@@ -239,7 +245,7 @@ var currentScrollPos = window.pageYOffset;
 
 
 // // **************************** loader
-var loader=setTimeout(hide,6000);   //make it ten 
+var loader=setTimeout(hide,1000000000);   //make it ten 
 function hide() {
     document.querySelector('.loader_container').style.display = 'none';
 }
