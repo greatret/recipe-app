@@ -19,7 +19,7 @@
 
     <body>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-            onload="if(submitted) {window.location='http:index.html';}"></iframe>
+            onload="if(submitted) {window.location='preference.html';}"></iframe>
         <div class="login_box">
             <h1>Login</h1>
             <form
@@ -95,9 +95,12 @@
                     alert("Form not submitted"); //Validation Message
                     return false;
                 } else {
+                    sessionStorage.setItem('name', document.querySelector('#name').value)
+                    sessionStorage.setItem('email', document.querySelector('#email').value)
                     submitted = true;
                     return true;
                 }
+
             }
         </script>
     </body>
