@@ -1,12 +1,15 @@
 
-preference=localStorage.getItem('Preference');
+preference=sessionStorage.getItem('Preference');
 if (preference == 'veg') {
     window.interests = ['paneer'];
 }
 else if(preference=='nonveg') {
     window.interests= ['chicken'];
 }
-
+else {
+    window.alert('You got the wrong url');
+    document.querySelector('body').style.display = none;
+}
 
 
 
