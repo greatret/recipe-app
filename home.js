@@ -4,7 +4,7 @@ if (preference == 'veg') {
     window.interests = ['paneer'];
 }
 else if(preference=='nonveg') {
-    window.interests= ['chicken'];
+    window.interests= ['chicken','tacos'];
 }
 else {
     window.location='error.html';
@@ -29,10 +29,11 @@ window.html = "";
 let recipe_images = [];
 //['samosa','vada','dosa','pizza','tacos','aloo tikki','biryani','pulav','gulab jamun']
 let recipe_labels = [];
+let recipe_ingredients = {};
 main = document.querySelector('.main');
 interests.forEach(
     interest => {
-        // getMeals(interest);
+        getMeals(interest);
     }
 );
 
@@ -54,8 +55,8 @@ setTimeout(call_kar,1000)
 window.number_displayed = 6;
 function getMeals(interest) {
 console.log('inside');
-window.APP_ID = '5d0f7d7f';
-    window.APP_KEY = 'f50cfc128a915e224ddbbe83fdc95e91';
+window.APP_ID = '3a9154d8';
+    window.APP_KEY = 'ac6e05b03bb46c10f2960d1a42205e30';
     let URL = `https://api.edamam.com/search?q=${interest}&app_id=${APP_ID}&app_key=${APP_KEY}`
         try {
                 fetch(URL)
@@ -80,12 +81,15 @@ window.APP_ID = '5d0f7d7f';
                             }
 
 
-            console.warn(data)
+            console.warn(data);
             data.hits.forEach(hit => {
                 // console.log(hit.recipe.label)
                 let label_length = hit.recipe.label;
                 recipe_images.push(hit.recipe.image);
                 recipe_labels.push(hit.recipe.label);
+                // recipe_ingredients.push(hit.recipe.ingredientLines);
+                // recipe_ingredients[hit.recpe.label] = hit.recipe.intructions;
+                console.log(hit.recipe.ingredientLines);
                 // if (label_length.length > 15) {
                 //     label_length = label_length.slice(0, 20) + "...";
                 // }
@@ -118,6 +122,7 @@ window.APP_ID = '5d0f7d7f';
 
 };
 setTimeout(console.log(recipe_images), 10000);
+setTimeout(console.log(recipe_ingredients), 10000);
 
 
 
