@@ -245,7 +245,7 @@ var currentScrollPos = window.pageYOffset;
 
 
 // // **************************** loader
-var loader=setTimeout(hide,1000000000);   //make it ten 
+var loader=setTimeout(hide,5000);   //make it ten 
 function hide() {
     document.querySelector('.loader_container').style.display = 'none';
 }
