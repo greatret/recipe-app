@@ -7,16 +7,12 @@ else if(preference=='nonveg') {
     window.interests= ['chicken'];
 }
 else {
-    // window.alert('You got the wrong url');
-    // document.querySelector('body').style.display = 'none';
     window.location='error.html';
 }
 quoteList = ["If we're not meant to have midnight snacks, why is there a light in the fridge", "a party without cake is just a meeting",
     "i just don't want to look back and think \"I could\'ve eaten that\" ", "Did you say exercise or extra fries", "You can't be sad when you're holding a cupcake",
     "Life is short. Eat the dessert first","i'm sorry for what i said when i was hungry","peas be mine"]
-// window.alert(quoteList.length);
 quotenumber = Math.floor(Math.random() * 8);
-// window.alert(quoteList[quotenumber]);
 document.querySelector('.quote').innerHTML = quoteList[quotenumber];
 
 
@@ -226,13 +222,6 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 
-
-
-// if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     document.getElementById("navbar").style.top = "0";
-//   } else {
-//     document.getElementById("navbar").style.top = "-50px";
-//   } 
 
 
 
