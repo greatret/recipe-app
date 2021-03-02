@@ -1,4 +1,4 @@
-
+first = true;
 preference=sessionStorage.getItem('Preference');
 if (preference == 'veg') {
     window.interests = ['paneer'];
@@ -18,24 +18,37 @@ document.querySelector('.quote').innerHTML = quoteList[quotenumber];
 
 
 
-
-
-
-
-
-
 // interests = ['samosa', 'vada', 'dosa', 'pizza'];
 window.html = "";
 let recipe_images = [];
 //['samosa','vada','dosa','pizza','tacos','aloo tikki','biryani','pulav','gulab jamun']
 let recipe_labels = [];
-let recipe_ingredients = {};
+let recipe_source = [];
+let recipe_labels_2 = [];
+let recipe_ingredients = [];
+window.recipe_ingredients_2= {};
 main = document.querySelector('.main');
 interests.forEach(
     interest => {
         getMeals(interest);
     }
 );
+
+
+setTimeout(storedata, 10000);
+
+
+function storedata() {
+    console.log('maa ka bhosda bhai bhai bhai bhai');
+    recipe_ingredients.forEach((v, i) => { recipe_ingredients_2[recipe_labels[i]] = v });
+    JSON.stringify(recipe_ingredients_2)
+    a=JSON.stringify(recipe_ingredients_2)
+    sessionStorage.setItem('images', recipe_images);
+    sessionStorage.setItem('labels', recipe_labels);
+    sessionStorage.setItem('ingredients', a);
+}
+
+
 
 window.req_no = 0;//nimish
 
@@ -61,8 +74,6 @@ window.APP_ID = '3a9154d8';
         try {
                 fetch(URL)
                     .then(response => {
-                        
-
                         // if (response.q == interests[interests.length - 1])
                         // {
                         //     console.warn("yes bitches sab maya hai")
@@ -73,8 +84,6 @@ window.APP_ID = '3a9154d8';
         .then(data => {
             console.log(data);
             // window.abc = data;
-            
-            
                         if (data.q == interests[interests.length - 1])
                         {
                             console.warn("yes bitches sab maya hai")
@@ -87,6 +96,8 @@ window.APP_ID = '3a9154d8';
                 let label_length = hit.recipe.label;
                 recipe_images.push(hit.recipe.image);
                 recipe_labels.push(hit.recipe.label);
+                recipe_source.push(hit.recipe.source);
+                recipe_ingredients.push(hit.recipe.ingredientLines);
                 // recipe_ingredients.push(hit.recipe.ingredientLines);
                 // recipe_ingredients[hit.recpe.label] = hit.recipe.intructions;
                 console.log(hit.recipe.ingredientLines);
@@ -118,18 +129,14 @@ window.APP_ID = '3a9154d8';
         } catch (error) {
             
         }
-    
-
 };
-setTimeout(console.log(recipe_images), 10000);
-setTimeout(console.log(recipe_ingredients), 10000);
+// setTimeout(console.log(recipe_images), 10000);
+// setTimeout(console.log(recipe_ingredients), 10000);
 
 
 
 
 
-
-// ******************* carousel images ***************************
 
 
 
@@ -154,20 +161,23 @@ function load(entries) {
         //         console.log(reload_interest);
         //     });
         // console.log('intereseting');
+        if (first == true) {
+            recipe_labels_2 = [...recipe_labels];
+            first = false;
+        }
         window.html = main.innerHTML;
-        for (I = 0; I < 6; I++)
-        {
+        for (I = 0; I < 6; I++) {
             console.log(recipe_images[number_displayed])
             // number_displayed
             if (recipe_labels[number_displayed].length > 15) {
-                    recipe_labels[number_displayed] = recipe_labels[number_displayed].slice(0, 20) + "...";
-                 }
+                recipe_labels[number_displayed] = recipe_labels[number_displayed].slice(0, 20) + "...";
+            }
          
 
 
             if (number_displayed % 2 == 1) {
-                html+= `
-                <div id=${number_displayed} class='card extra_top_margin'>
+                html += `
+                <div id=${number_displayed} class='card extra_top_margin'  >
                 <img src="${recipe_images[number_displayed]}"  class='dish_image' alt="${recipe_images[number_displayed]}"/>
                 <div class='label_container'>
                 <p class='label'>${recipe_labels[number_displayed]}<p>
@@ -176,8 +186,8 @@ function load(entries) {
             `;
             }
             else {
-                html+= `
-                <div id=${number_displayed} class='card'>
+                html += `
+                <div id=${number_displayed} class='card' >
                 <img src="${recipe_images[number_displayed]}"  class='dish_image' alt="${recipe_images[number_displayed]}"/>
                 <div class='label_container'>
                 <p class='label'>${recipe_labels[number_displayed]}<p>
@@ -186,60 +196,72 @@ function load(entries) {
             `;
             }
             
-
             number_displayed++;
 
         }
         main.innerHTML = html;
+        b = document.querySelectorAll(".card")
+        b.forEach(ev1 => { ev1.addEventListener('click',userclick)})    }
+
+        console.warn(number_displayed >= recipe_images.length, number_displayed, recipe_images.length)
+        if (number_displayed >= recipe_images.length) {
+            observer.unobserve(document.querySelector('footer'));
+            document.querySelector('footer').innerHTML = 'You have reached end';
+        }
+    }
+    function reloadMeals(reload) {
+        if (reload == 1) {
+            let reload_interest_1 = ['pizza', 'burger'];
+            return reload_interest_1;
+        }
+        else if (reload == 2) {
+            let reload_interest_2 = ['sandwhich', 'tacos'];
+            return reload_interest_2;
+        }
+        else {
+            return [];
+        }
     };
 
-
-    console.warn(number_displayed >= recipe_images.length,number_displayed , recipe_images.length)
-    if (number_displayed >= recipe_images.length)
-    {
-        observer.unobserve(document.querySelector('footer'));
-        document.querySelector('footer').innerHTML = 'You have reached end';
+    // **************************** moving menu bar
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector(".menu_bar").style.bottom = "0px";
+        } else {
+            document.querySelector(".menu_bar").style.bottom = "-50px";
         }
-}
-function reloadMeals(reload) {
-    if (reload == 1) {
-        let reload_interest_1 = ['pizza', 'burger'];
-        return reload_interest_1;
+        prevScrollpos = currentScrollPos;
     }
-    else if (reload == 2) {
-        let reload_interest_2 = ['sandwhich', 'tacos'];
-        return reload_interest_2;
+
+
+
+
+    // *********************************usercicked
+    function userclick(ev) {
+        console.log(ev.path[1].id);
+        console.log(recipe_labels[ev.path[1].id]);
+        sessionStorage.setItem('userselectedlabel',recipe_labels_2[ev.path[1].id])
+        console.log(recipe_images[ev.path[1].id]);
+        sessionStorage.setItem('userselectedimage',recipe_images[ev.path[1].id])
+        userSelected=JSON.stringify(recipe_ingredients_2[recipe_labels[ev.path[1].id]]);
+        console.log(recipe_source[ev.path[1].id]);
+        sessionStorage.setItem('userselectedsource',recipe_source[ev.path[1].id])
+        userSelected=JSON.stringify(recipe_ingredients_2[recipe_labels[ev.path[1].id]]);
+        console.log(userSelected);
+        sessionStorage.setItem('userselectedingredient', userSelected);
+        window.location = 'result.html';
     }
-    else {
-        return [];
+
+
+
+
+
+
+
+    // // **************************** loader
+    var loader = setTimeout(hide, 5000);   //make it ten 
+    function hide() {
+        document.querySelector('.loader_container').style.display = 'none';
     }
-};
-
-// **************************** moving menu bar
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".menu_bar").style.bottom = "0px";
-  } else {
-    document.querySelector(".menu_bar").style.bottom = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// // **************************** loader
-var loader=setTimeout(hide,5000);   //make it ten 
-function hide() {
-    document.querySelector('.loader_container').style.display = 'none';
-}

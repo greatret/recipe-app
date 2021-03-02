@@ -16,19 +16,19 @@ body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
   color: white;
+  padding-bottom: 10px;
 }
 
 .head_image {
   width: 100%;
-  height: auto;
+  height: 40vh;
   max-height: 40vh;
+  text-align: center;
 }
 
-.head_image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.head_image .top_image {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .recipe_head,
@@ -40,24 +40,64 @@ body {
   font-size: 30px;
 }
 
-.recipe_list .recipe,
-.recipe_list .diet_label,
-.diet_label_list .recipe,
-.diet_label_list .diet_label {
+.recipe_list .recipe {
   margin: 5px 0 20px 50px;
   font-family: "Poppins", sans-serif;
   border-radius: 5px 0px 0px 5px;
   color: #c5c2c2;
-  font-size: 18px;
+  font-size: 14px;
   background: #424141;
-  padding: 20px;
+  padding: 10px;
+  text-transform: capitalize;
 }
 
 .source {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 12px;
-  margin: 10px;
-  color: #c5c2c2;
+  margin: 0px 10px;
+  color: #ecbaba;
+}
+
+.menu_bar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: #E23744;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px 10px 0px 0px;
+  -webkit-transition: bottom 0.3s ease;
+  transition: bottom 0.3s ease;
+}
+
+.menu_bar .search_link_container,
+.menu_bar .explore_link_container {
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu_bar .fa-compass,
+.menu_bar .fa-search {
+  color: #fff;
+  font-size: 32px;
 }
 /*# sourceMappingURL=resultstyle.css.map */
