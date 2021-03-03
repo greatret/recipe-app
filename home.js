@@ -1,7 +1,7 @@
 first = true;
 preference=sessionStorage.getItem('Preference');
 if (preference == 'veg') {
-    window.interests = ['veg bruschetta','poutine','arrabiatapasta','loaded nachos','soya chaap','penne alferdo pasta'];
+    window.interests = ['veg bruschetta','Cheesy Cheddar Broccoli Casserole','arrabiata pasta','dimsum momo','soya chaap','paneer malai tikka'];
 }
 else if(preference=='nonveg') {
     window.interests= ['non veg bruschetta','bbq chicken nachos','chicken steak sizzler','prawns matka biryani','chicken crispy','murg mussalam'];
@@ -38,7 +38,6 @@ setTimeout(storedata, 8000);
 
 
 function storedata() {
-    console.log('maa ka bhosda bhai bhai bhai bhai');
     recipe_ingredients.forEach((v, i) => { recipe_ingredients_2[recipe_labels[i]] = v });
     JSON.stringify(recipe_ingredients_2)
     a=JSON.stringify(recipe_ingredients_2)
@@ -55,8 +54,7 @@ function call_kar()
     {
          getMeals(interests[req_no ++]);
         getMeals(interests[req_no++]);
-        console.log(interests)
-    if (req_no != interest.length)
+    if (req_no != interests.length)
     {
     setTimeout(call_kar,5000)
         }
@@ -67,29 +65,23 @@ setTimeout(call_kar,3000)
 
 window.number_displayed = 6;
 function getMeals(interest) {
-console.log('inside');
 window.APP_ID = '8b01213d';
     window.APP_KEY = '97786d28e67ab3902f2ea8cc8e8a9da0';
     let URL = `https://api.edamam.com/search?q=${interest}&app_id=${APP_ID}&app_key=${APP_KEY}`
         try {
                 fetch(URL)
                     .then(response => {
-                        console.warn(response.ok)
                         return response.json()
                     })
         .then(data => {
-            console.log(data);
                         if (data.q == interests[interests.length - 1])
                         {
                             // console.warn("yes bitches sab maya hai")
                             }
 
 
-            console.warn(data);
             data.hits.forEach(hit => {
-                console.log(hit.recipe.source);
-                if (hit.recipe.source == 'Honest Cooking') {
-                    // window.alert('aaya madarchod');
+                if (hit.recipe.source == 'Honest Cooking' || hit.recipe.source == 'Food52' || hit.recipe.source=='Serious Eats') {
                     return false;
                 }
                 let label_length = hit.recipe.label;
@@ -97,7 +89,6 @@ window.APP_ID = '8b01213d';
                 recipe_labels.push(hit.recipe.label);               
                 recipe_source.push(hit.recipe.source);
                 recipe_ingredients.push(hit.recipe.ingredientLines);
-                console.log(hit.recipe.ingredientLines);
             });
             main.innerHTML = html;
         }).catch((er) => {
@@ -126,7 +117,6 @@ function load(entries) {
         }
         window.html = main.innerHTML;
         for (I = 0; I < 6; I++) {
-            console.log(recipe_images[number_displayed])
             if (recipe_labels[number_displayed].length > 15) {
                 recipe_labels[number_displayed] = recipe_labels[number_displayed].slice(0, 20) + "...";
             }
@@ -161,7 +151,6 @@ function load(entries) {
         b = document.querySelectorAll(".card")
         b.forEach(ev1 => { ev1.addEventListener('click',userclick)})    }
 
-        console.warn(number_displayed >= recipe_images.length, number_displayed, recipe_images.length)
         if (number_displayed >= recipe_images.length) {
             observer.unobserve(document.querySelector('footer'));
             document.querySelector('footer').innerHTML = 'You have reached end';
@@ -185,16 +174,11 @@ function load(entries) {
 
     // *********************************usercicked
     function userclick(ev) {
-        console.log(ev.path[1].id);
-        console.log(recipe_labels[ev.path[1].id]);
         sessionStorage.setItem('userselectedlabel',recipe_labels_2[ev.path[1].id])
-        console.log(recipe_images[ev.path[1].id]);
         sessionStorage.setItem('userselectedimage',recipe_images[ev.path[1].id])
         userSelected=JSON.stringify(recipe_ingredients_2[recipe_labels[ev.path[1].id]]);
-        console.log(recipe_source[ev.path[1].id]);
         sessionStorage.setItem('userselectedsource',recipe_source[ev.path[1].id])
         userSelected=JSON.stringify(recipe_ingredients_2[recipe_labels[ev.path[1].id]]);
-        console.log(userSelected);
         sessionStorage.setItem('userselectedingredient', userSelected);
         window.location = 'result.html';
     }

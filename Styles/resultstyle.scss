@@ -16,14 +16,17 @@ sans-serif;
     box-sizing: border-box;
 }
 
+*:focus {
+    border: none;
+    outline: none;
+}
+
 html {
     height: -webkit-fill-available;
 }
 
 body {
     background-color: black;
-    // height: 100vh;
-    // overflow: hidden;
     min-height: 100vh;
     min-height: -webkit-fill-available;
     color: white;
@@ -48,12 +51,10 @@ body {
     font-family: $font;
     padding: 5px 0px 5px 20px;
     color: gray;
-    // background: red;
     font-size: 30px;
 }
 
 .recipe_list {
-    // background: green;
 
     .recipe {
 
@@ -89,12 +90,10 @@ body {
     align-items: center;
     border-radius: 10px 10px 0px 0px;
     transition: bottom 0.3s ease;
-    // margin-bottom: 200px;
 
     .search_link_container,
     .explore_link_container {
         width: 50%;
-        // background-color: rgba(255, 253, 253, 0.171);
         height: 100%;
         display: flex;
         align-items: center;
