@@ -33,7 +33,7 @@ function clickPress(event) {
  if (event.keyCode == 13) {
      document.querySelector('.fa-times').style.opacity = '1';
      window.search_box = document.querySelector('.search_box');
-     setTimeout(storedata, 4000);
+     setTimeout(storedata, 2000);
     search_query = search_box.value;
      search_box.blur();
 
